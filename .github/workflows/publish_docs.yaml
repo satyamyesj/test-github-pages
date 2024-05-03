@@ -22,6 +22,7 @@ jobs:
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
       with:
+        docs-folder: "."
         build-command: "sphinx-build . build/docs/html -b html -c docs/ -D root_doc=docs/index"
 
     - name: Upload artifacts
