@@ -16,6 +16,7 @@
     <script src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="URLS" href="urls.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -34,9 +35,21 @@
             
   <section id="views">
 <h1>Views<a class="headerlink" href="#views" title="Permalink to this heading">¶</a></h1>
-<p>We have different personas for our APIs, namely admin, spender, approver personas.
-For each of these person we have BaseView classes like <code class="docutils literal notranslate"><span class="pre">AdminView</span></code>, <code class="docutils literal notranslate"><span class="pre">SpenderView</span></code> e.t.c.</p>
+<p>We have BaseView classes like <code class="docutils literal notranslate"><span class="pre">SuperAdminView</span></code>, <code class="docutils literal notranslate"><span class="pre">StudentView</span></code> e.t.c.</p>
+<section id="creating-view-class">
+<h2>Creating View Class<a class="headerlink" href="#creating-view-class" title="Permalink to this heading">¶</a></h2>
 <p>To create new view, we can extend one of these view as show below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SettingsSuperAdminView</span><span class="p">(</span><span class="n">SuperAdminView</span><span class="p">):</span>
+  <span class="n">get_schema</span> <span class="o">=</span> <span class="n">GetSettingsSuperAdminSchema</span>
+  <span class="n">post_schema</span> <span class="o">=</span> <span class="n">PostSettingsSuperAdminSchema</span>
+  <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+      <span class="k">raise</span> <span class="n">error</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -56,15 +69,22 @@ For each of these person we have BaseView classes like <code class="docutils lit
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../docs/querying_db.html">Querying DB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">URLS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Views</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../docs/index.html">Documentation overview</a><ul>
+  <li><a href="index.html">API</a><ul>
+      <li>Previous: <a href="urls.html" title="previous chapter">URLS</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
