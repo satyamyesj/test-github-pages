@@ -25,6 +25,9 @@ jobs:
         docs-folder: "."
         build-command: "sphinx-build . build/docs/html -b html -c docs/ -D root_doc=docs/index"
 
+    - name: Add Index HTML
+      run: cp index.html build/docs/html/
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
