@@ -3,7 +3,7 @@ name: Test Setups Migration Version
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish-docs:
