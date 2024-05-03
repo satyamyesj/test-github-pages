@@ -7,7 +7,8 @@
 <title>Redirecting...</title>
 <script>
     window.onload = function() {
-        window.location.href = "/docs/index.html";
+        var projectUrl = window.location.href.split('/').slice(0, -2).join('/');
+        window.location.href = projectUrl + '/docs/index.html';
     };
 </script>
 </head>
