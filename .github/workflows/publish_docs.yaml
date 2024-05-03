@@ -20,7 +20,7 @@ jobs:
         persist-credentials: true
 
     - name: Build HTML
-      uses: ammaraskar/sphinx-action@master
+      uses: satyamyesj/sphinx-action@master
       with:
         docs-folder: "."
         build-command: "sphinx-build . build/docs/html -b html -c docs/ -D root_doc=docs/index"
